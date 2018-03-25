@@ -1,0 +1,49 @@
+<div {% if box_counter != 0 %}data-sr{% end %} class="col-sm-12 sobre-botones caja-xl ">
+    <div class="cont-modifi" style="background:url('{{ cnt["thumb_1"] }}')" >
+        <div class="modifi" style="display:none;">
+            <button class="cerrar-opciones" >
+                <i class="icon-remove"></i>
+            </button>
+            <ul class="vertical-center-cont">
+	            <li>
+	                <a href="{{ site_base }}/content/remove?id={{ cnt["id"] }}" >Archivar</a>
+	            </li>
+	            <li>
+	                <a href="/" >Editar</a>
+	            </li>
+	            <li>
+	                <a href="{{ site_base }}/content/set?content_id={{ cnt["id"] }}&box_id={{ box_index }}" >Fijar</a>
+	            </li>
+	            <li>
+	                <a href="/" >Liberar</a>
+	            </li>
+        	</ul>
+        </div>
+        <a href="{{ site_base }}/product/detail/{{ friendlyURL(cnt["title"]) }}/{{ cnt["id"] }}" >
+            <div class="cont-boxes" style="background:url('{{ cnt["thumb_1"] }}')" >
+                <div class="box-product">
+                    <div class="vertical-center-cont">
+                        <div class="horizontal-center-cont"> 
+                            <div class="box-product-info">
+        		                <h2>{{ cnt["title"] }}</h2>
+                                <button class="box-product-button">comprar</button>
+                            </div>
+                        </div>
+		            </div>
+                </div>
+                <img src="{{ cnt["thumb_1"] }}" data-original="{{ cnt["thumb_500"] }}" class=" img-responsive lazy " alt="item" />
+            </div>
+            <span class="productlist-price-container">
+            <span class="product-price">
+              <span class="price">{{ cnt["price"] }}</span>
+            </span>
+          </span>
+        </a>
+     </div>
+    <span class="btn-modificar-cont">
+       <i class="icon-pencil"></i>
+    </span>
+    <span class="btn-modificar-cont btn-set-cont" content-id="{{ cnt["id"] }}" box-id="{{ box_index }}" >
+        <i class="icon-pushpin"></i>
+    </span>
+</div>

@@ -1,0 +1,114 @@
+{% extends "../base.html" %}
+{% block title %}
+	{{ site.name }}
+{% end %}
+{% block css %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ site_base }}/static/cssbt/style.css?v=5">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block header %}
+	{% include '../home/inside_header_profile.html' %}
+{% end %}
+{% block body %}
+	<div class="container-fluid-profile cart-list productlist" style="text-align:left;">
+		
+		<div class="row">
+			
+			<div class="widget col-sm-12 especial profile-company">
+				<div class="col-sm-12 especial profile-foto-top">		
+							<div class="profile-company-logo">
+								<img src="{{ profile['profile_img']['thumb_200'] }}" alt="item">
+							</div>
+				</div>
+				<div class="col-sm-12 especial profile-name">
+							<h2>
+								art soap
+							</h2>
+							
+			    </div>
+			</div>
+			<div class="col-sm-12 especial">
+					<div class="col-sm-8 profile-data">
+							<ul>
+								<li><a>www.artsoup.cl</a></li>
+								<li><a>{{ profile["email"][0] }}</a></li>
+								<li><a>+56981354678</a></li>
+								<!-- <li><a>{{ profile["url"][0] }}</a></li> -->
+								<li><a>Los trapenses 8998, Las condes, Santiago. Chile.</a></li>
+							</ul>
+					</div>
+					
+			</div>
+			
+			<div class="col-sm-12 profile-partner" >
+				<div class="col-sm-12 profile-title">
+				    <hr>
+					<h2>Socias</h2>
+				</div>
+				<div class="col-sm-12 especial profile-partner-top">
+					<div class="col-sm-4 profile-partner-image especial">
+							<img src="{{ profile['company_img']['thumb_200'] }}"  alt="item">
+					</div>
+					<div class="col-sm-8 especial profile-partner-data">
+							<h2>
+								{{ profile["name"][0] }}
+							</h2>
+							<p>
+								correo@socia.cl
+							</p>
+					</div>
+				</div>
+				<hr>
+			</div>
+			
+			
+			<div class="col-sm-12 profile-company-line">
+				<hr>
+				<div class="widget col-sm-12 articulo-text" style="text-align:left;">
+					<h2 style="text-align:left; font-size: 30px; font-weight: 300; text-transform: capitalize;">Descripcion Empresa</h2>
+					<p class="p-art">As an interesting side note, as a head without a body, I envy the dead. Daylight and everything. Spare me your space age technobabble, Attila the Hun! We'll go deliver this crate like professionals, and then we'll go home. As an interesting side note, as a head without a body, I envy the dead. Daylight and everything. Spare me your space age technobabble, Attila the Hun! We'll go deliver this crate like professionals, and then we'll go home. </p>
+					
+					<p style="width:100%; text-align: right;"><a> ver mas...</a></p>
+					
+				</div>
+				<div class="widget col-sm-12">
+					<h3>Contacto</h3>
+					<p>Comunicate con la empresa de esta socia</p>
+					<form action="#" class="myform" method="post" novalidate id="newsletter">
+						<div class="form-group">
+							<div class="col-sm-6">
+								<label class="control-label">Nombre</label>
+								<div class=" controls">
+									<input name="email" placeholder="Tu nombre" class="form-control input-lg requiredField" type="email" >
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<label class="control-label">Email</label>
+								<div class=" controls">
+									<input name="email" placeholder="Tu correo" class="form-control input-lg requiredField" type="email" >
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<label class="control-label">Email</label>
+								<div class="controls">
+									<textarea name="comments" placeholder="Envíanos tu comentario" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+								</div>
+							</div>
+						</div>
+						<p><button name="submit" type="submit" class="btn btn-store btn-block" >Enviar correo correo</button></p>
+						<!-- <input type="hidden" name="submitted" id="submitted3" value="true"> -->
+					</form>
+				</div>
+				<div class="post-date col-sm-8">
+					tags | <a href="">Jabones</a> , <a href="">Carcazas</a> , <a href="">sociaficticia</a>
+				</div>
+			</div>
+		</div>
+		<header>
+			<h1 style="text-align:left;"><a href="/article">
+				Productos
+			</a></h1>
+		</header>
+	</div>
+{% end %}

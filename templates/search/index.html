@@ -1,0 +1,53 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block header_title %}{% try %}{{ search_query }}{% except %}{% end %}{% end %}
+
+{% block body %}
+    <div id="wrap">
+        <h2>{% try %}{{ search_query }}{% except %}{% end %}</h2>
+        <!-- registration -->
+        <div class="container-fluid productlist">
+            <!-- raw 1 -->
+            <div class="row">
+                {% set box_counter = 1 %}
+                {% set box_index = 0 %}
+                {% for cnt in results %}
+                    <div class="col-sm-4 sobre-botones caja-m">
+                    {% if cnt["content_type"] == "article" %}
+                        {% include '../content/content_box/box_m_article.html' %}
+                    {% elif cnt["content_type"] == "event" %}
+                        {% include '../content/content_box/box_m_event.html' %}
+                    {% elif cnt["content_type"] == "banner" %}
+                        {% include '../content/content_box/box_m_banner.html' %}
+                    {% elif cnt["content_type"] == "profile" %}
+                        {% include '../content/content_box/box_m_profile.html' %}
+                    {% elif cnt["content_type"] == "gallery" %}
+                        {% include '../content/content_box/box_m_gallery.html' %}
+                    {% elif cnt["content_type"] == "product" %}
+                        {% include '../content/content_box/box_m_product.html' %}
+                    {% end %}
+                    </div>
+                    {% set box_index += 1 %}
+                {% end %}
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+{% include '../content/footer.html' %}
+{% end %}

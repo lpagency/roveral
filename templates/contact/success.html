@@ -1,0 +1,41 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick-theme.css"/>
+{% end %}
+
+{% block javascript %}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCypftBmBdQmGctgOOdPcJ_0JiNNzp3dGQ"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/map.home.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section>
+    <div class="container">
+        
+    </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

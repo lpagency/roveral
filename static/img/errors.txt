@@ -1,0 +1,1 @@
+[Mon Apr 11 2016 01:04:53 GMT-0300 (CLST)] layer "Caja_grilla.png copia": Expected end of input but "c" found.

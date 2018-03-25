@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- head bt inicio -->
+        <title>Roveral</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <!-- <meta name="description" content=" Peluquerías Glam&co llegó a Bogotá, Colombia. La innovación nos inspira por lo que ofrecemos lo último en tendencias en corte de cabello, barbería, color, blower, peinados y manicure. ¡Ven a descubrir la experiencia Glam!">
+        <meta tag="" content="peluquerías / barbero /peluquerías / salón de belleza / Bogotá / unicentro / barbería /manicure /pedicure / depilación / corte de cabello / color de cabello / tintura/ peinados / blower/ peluquero
+"> -->
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=430px, user-scalable=no" />
+        <!-- <meta name="viewport" content="device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}common/js/bower/bodegas.client/dist/bodegas.client.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/normalize.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/component.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/custom-styles.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/demo.css">
+        
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+        
+        <!-- autocomplete -->
+        <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" /> -->
+        <!-- autocomplete -->
+        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+
+
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css"/> -->
+
+        
+        {% block css %}{% end %}
+
+        {% if is_admin %}
+        {% set editabletext = 'editabletext' %}
+        {% else %}
+        {% set editabletext = '' %}
+        {% end %}
+
+    </head>
+
+        {% block header %}{% end %}
+
+        {% block body %}
+        <body id="home">
+        {% end %}
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script src="{{ site_base }}/static/js/html5shiv.js"></script>
+        <script src="{{ site_base }}/static/js/respond.min.js"></script>
+        
+<!--    <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
+
+          <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery.cookie/jquery.cookie.js"></script>
+
+                <!-- carga de productos -->
+<!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+
+      
+
+        
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}common/js/bower/bodegas.client/dist/bodegas.client.js"></script>
+
+         <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script> -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+
+        {% block javascript %}{% end %}
+        <script type="text/javascript">
+        $(document).ready(function()
+        {  
+          $(".button").click(function(e)
+          {
+            e.preventDefault();
+            $('html, body').animate({
+              scrollTop: $($.attr(this, 'href')).offset().top
+            }, 1000);
+          });
+        });
+      </script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+        var site_name="{{site.name}}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+
+        {% end %}
+
+    </body>
+</html>

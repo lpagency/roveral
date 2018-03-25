@@ -1,0 +1,53 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick-theme.css"/>
+{% end %}
+
+{% block javascript %}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCypftBmBdQmGctgOOdPcJ_0JiNNzp3dGQ"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/map.home.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+
+<script language='JavaScript1.1' async src='//pixel.mathtag.com/event/js?mt_id=1302214&mt_adid=203683&mt_exem=&mt_e
+xcl=&v1=&v2=&v3=&s1=&s2=&s3='></script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section>
+    <div class="container">
+        <div class="success">
+            <div class="col-md-12">
+                <div class="success-text text-center {{editabletext}}" text-id="{{ site.name + '_p_ja_2' }}">{{ read_text(site.name +  '_p_ja_2') }}</div>
+          </div>
+          <div class="success-2 col-md-12">
+              <a href="{{ site_base }}" class="boton-success">
+                VOLVER AL INICIO
+              </a>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

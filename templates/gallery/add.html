@@ -1,0 +1,61 @@
+<!-- generar contenido galeria -->
+<div id="g-galeria-a" class="loginpopup step_two">
+    <div class="g-header-form">
+            <div class="g-header-button g-header-button-active">
+                <h2>NUEVO PRODUCTO</h2>
+            </div>
+            <div class=" g-header-button">
+                <h2>BORRADORES</h2>
+            </div>
+    </div>
+    <form id="gallery-form">
+    <div class="form-group required">
+        <label class="control-label">Nombre galería</label>
+        <input name="name" class="form-control" placeholder="Nombre" class="form-control" type="text" id="gallery-name-field">
+        <div id="error_gallery_name" class="error g-alert">Ingrese un nombre</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" style="width:100%;text-align:left;">Descripci&oacute;n de la galeria</label>
+        <div class="controls">
+            <!--form-->
+                <div id="wysihtml5-gallery-toolbar" style="display: none; float:left;">
+                    <a data-wysihtml5-command="bold"><b>bold |</b></a>
+                    <a data-wysihtml5-command="italic"><b>italic |</b></a>
+                    <a data-wysihtml5-command="insertUnorderedList"><b> list</b></a>
+                </div>
+                <textarea id="wysihtml5-gallery-textarea" name="comments" placeholder="ingresa una descripci&oacute;n para tu producto (Opcional)" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+            <!--/form>-->            
+        </div>
+    </div>
+    <div class="form-group required">
+        <label class="control-label">Seleccione Fotografias</label>
+        <div id="gallery-list">
+        </div>        
+        <script type="text/template" class="gallery-template">
+                <div class="form-added-image-gallery">
+                    <i class="icon-remove" id="image-remover" index=";;index;;"></i>
+                    <img class="gallery-image" src=";;src;;">
+                    
+                </div>
+        </script>        
+        <div class="input_name">
+            <div class="form-add-image" id="gallery-add-image-button">   
+                <i class="icon-plus icon-generic"></i>
+                <img style="opacity: 0" src="" class="image-preview" id="preview-image-holder"> 
+                <input type="file" name="image" lp-image-loader class="form-input-hided" id="gallery-input-image" multiple>
+        </div>
+        </div>        
+                         
+    </div>
+    
+    <div id="error_gallery_images" class="error g-alert">Debe haber al menos una imagen</div>
+    
+
+    {% include '../common/add_tag.html' %}
+    <button id="producto-volver-5"><a>volver</a></button>
+    <button><a>archivar</a></button>
+    <button><a>previsualizar</a></button>
+    <button type="submit" id="submit_gallery_form"><a>publicar</a></button>
+    <!--button><a href="/galeria">publicar</a></button-->
+    </form>
+</div>

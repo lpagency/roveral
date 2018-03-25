@@ -1,0 +1,253 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+    <script type="text/javascript">
+         // banner article/detail
+             $(".detalle_text, .detalle_text2").mouseover(function(){
+                $(".banner-detalles").removeClass("desaturada");
+                $(".banner-detalles").addClass("desaturada-hover");
+            });
+            $(".detalle_text, .detalle_text2").mouseout(function(){
+                $(".banner-detalles").removeClass("desaturada-hover");
+                $(".banner-detalles").addClass("desaturada");
+            });
+    </script>
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+   
+    <section class="height478">
+    <!--banner grande-->
+        {% if is_admin %}
+        <div class="col-lg-12 pad0">
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_detalle">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle" name="image" id="img_banner_detalle" >
+               </div>
+                {% end %}
+                <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="desaturada banner-detalles" alt="item">
+                
+
+                <h1 class="col-md-12 col-xs-12 detalle_text text-center {{editabletext}}" text-id="{{ site.name + '_detalle_text1' }}"> {{ read_text(site.name +  '_detalle_text1') }}
+                </h1>
+                <h3 class="col-md-12 col-xs-12 detalle_text detalle_text2 text-center {{editabletext}}" text-id="{{ site.name + '_detalle_text2' }}"> {{ read_text(site.name +  '_detalle_text2') }}
+                 </h3>
+
+       </div>    
+</section>
+
+
+<section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="text-center">
+                        <p class="inf_detalle {{editabletext}}" text-id="{{ site.name + '_in_det' }}"> {{ read_text(site.name +  '_in_det') }} </p>
+                    </div>
+
+                </div>
+            </div> 
+        </div>
+        
+</section>
+
+<div id="wrap" style="top:80px;">
+    <!-- registration -->
+    <div class="row">
+        <div class="container art">
+             <div class="col-md-12 col-xs-12 blog-content">
+                <div align="center">
+                    <div class="cuadro">
+                        <div class="content articulo-text2" style="text-align:center;">
+                            <div class="col-sm-12 content-picture" style="text-align:center;">
+
+                                <!-- <div class="post-date" style="text-align:left;">
+                                {{ article["creation_date"].strftime("%d %b %Y") }} 
+                                </div> -->
+
+                                <!-- <img class="fondo-articulo"src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item"> -->
+                                 <!-- <h1 class="h1-art_a">
+                                    {{ article["title"] }}
+                                </h1> -->
+                            </div>
+                            
+                            <div class="col-sm-12 especial title-wraper">
+                                <!-- <h2 class="h2-art_b">"{{ article["caption"] }}"
+                             
+                                </h2> -->
+                            </div>
+                            <!--  <div class="col-sm-12 especial"> -->
+                            <div class="col-sm-12 especial">
+                                <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3 col-sm-offset-1" >
+                                    {{ article["description"] }}
+                                </div>
+                            </div> 
+                            <!-- </div> -->
+                                <!-- <div class="col-sm-12 especial p-art" style="text-align: right;">
+                                    <a href="#!"> Ver mas...</a>
+                                </div> -->
+                                <!-- <div class="post-date col-sm-12 p-art ">
+                                    tags | <a>{{ "</a> , <a>".join(article["tags"]) }}</a>
+                                </div> -->
+                        </div>
+                  </div>
+                </div>
+                </div>
+        </div>
+
+
+        <div class="col-sm-3 blog-sidebar">
+            <div class="widget">
+            </div>
+        </div>
+    </div>
+    <!-- <article>
+        <header>
+            <h1 class="h1-art" >Contenido relacionados</h1>
+        </header>
+    </article> -->
+    <!-- {{! content }} -->
+    <!-- row 4 -->
+    <div class="carritoproductos clearfix">
+        <div class="flecha clearfix">
+        </div>
+    </div>
+</div>
+
+<!-- **primero** -->
+
+<div class="clearfix fi"></div>
+
+<section class="height478">
+    <!--banner grande-->
+        {% if is_admin %}
+        <div class="col-lg-12 pad0">
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_detalle_dos">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle_dos" name="image" id="img_banner_detalle_dos" >
+               </div>
+                {% end %}
+                <img id="{{ site.name }}_banner_detalle_dos" src="{{ read_image(site.name + '_banner_detalle_dos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle_dos',500) }}'" class="desaturada banner-deta-dos" alt="item">
+                
+
+                <h1 class="col-md-12 col-xs-12 detalle_text-uno text-center {{editabletext}}" text-id="{{ site.name + '_detalle_dos' }}"> {{ read_text(site.name +  '_detalle_dos') }}
+                </h1>
+                <h3 class="col-md-12 col-xs-12 detalle_text detalle_text-dos text-center {{editabletext}}" text-id="{{ site.name + '_detalle_dos_2' }}"> {{ read_text(site.name +  '_detalle_dos_2') }}
+                 </h3>
+
+       </div>    
+</section>
+
+<section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="text-center">
+                        <p class="inf_detalle2 {{editabletext}}" text-id="{{ site.name + '_inf_det7' }}"> {{ read_text(site.name +  '_inf_det7') }} </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+</section>
+
+<!-- **segundo** -->
+
+<div id="wrap" style="top:80px;">
+    <!-- registration -->
+    <div class="row">
+        <div class="container art">
+            <div class="col-md-12 col-xs-12 blog-content">
+               <div align="center">
+                  <div class="cuadro2">
+                        <div class="content articulo-text2" style="text-align:center;">
+                            <div class="col-sm-12 content-picture" style="text-align:center;">
+
+                                <!-- <div class="post-date" style="text-align:left;">
+                                {{ article["creation_date"].strftime("%d %b %Y") }} 
+                                </div> -->
+
+                                <!-- <img class="fondo-articulo"src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item"> -->
+                               <!--  <h1 class="h1-art_a">
+                                    {{ article["title"] }}
+                                </h1> -->
+                            </div>
+                            
+                            <div class="col-sm-12 especial title-wraper">
+                                <!-- <h2 class="h2-art_b">"{{ article["caption"] }}"
+                                   
+                                </h2> -->
+                            </div>
+                            <!--  <div class="col-sm-12 especial"> -->
+                            <div class="col-sm-12 especial">
+                                <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3 col-sm-offset-1" >
+                                    {{ article["description"] }}
+                                </div>
+                            </div> 
+                            <!-- </div> -->
+                                <!-- <div class="col-sm-12 especial p-art" style="text-align: right;">
+                                    <a href="#!"> Ver mas...</a>
+                                </div> -->
+                                <!-- <div class="post-date col-sm-12 p-art ">
+                                    tags | <a>{{ "</a> , <a>".join(article["tags"]) }}</a>
+                                </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="col-sm-3 blog-sidebar">
+            <div class="widget">
+            </div>
+        </div>
+    </div>
+    <!-- <article>
+        <header>
+            <h1 class="h1-art" >Contenido relacionados</h1>
+        </header>
+    </article> -->
+    <!-- {{! content }} -->
+    <!-- row 4 -->
+    <div class="carritoproductos clearfix">
+        <div class="flecha clearfix">
+        </div>
+    </div>
+</div>
+
+
+
+ <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-lg-12 space100">
+                <h1 class="text-contact det {{editabletext}}"  text-id="{{ site.name + '_contact_det' }}"> {{ read_text(site.name + '_contact_det') }}
+                </h1>
+                <a href="{{ site_base}}/contact">
+                <button type="button" class="btn btn-contact det2">Contáctenos</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,50 @@
+<!-- generar evento -->
+<div id="g-evento-a" class="loginpopup step_two">
+    <form action="{{ site.url }}event/add" method="post" enctype="multipart/form-data" class="event-add-form" >
+        <div class="g-header-form">
+            <div class="g-header-button g-header-button-active">
+                <h2>NUEVO EVENTO</h2>
+            </div>
+            <div class=" g-header-button">
+                <h2>BORRADORES</h2>
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="control-label">Nombre evento</label>
+            <input required name="name" id="InputAddress" placeholder="Ingrsar y edita la información del evento" class="form-control" type="text">
+            <div for="name" class="error g-alert" >Nombre no puede estar vacío</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group required">
+            <label class="control-label" style="width:100%;text-align:left;">Texto</label>
+            <div id="wysihtml5-event-toolbar" style="display: none; float:left;">
+                <a data-wysihtml5-command="bold"><b>bold |</b></a>
+                <a data-wysihtml5-command="italic"><b>italic |</b></a>
+                <a data-wysihtml5-command="insertUnorderedList"><b>lista</b></a>
+            </div>
+            <textarea id="wysihtml5-event-textarea" required name="description" placeholder="Ingresa la informacion del evento" class="form-control" type="textarea"></textarea>
+            <div for="description" class="error g-alert" >Descripción no puede estar vacía</div>
+        </div>
+        <div class="form-group required" >
+            <label class="control-label" >Fecha</label>
+            <input name="begin" class="form-control date" placeholder="dd/mm/yyyy hh:mm" />
+            <div for="begin" class="error g-alert" >Fecha no puede estar vacía</div>
+        </div>
+        
+        {% include '../common/add_image.html' %}
+
+        <div class="form-group required">
+            <label class="control-label">Sumar formulario</label>
+            <input required name="form_url" id="InputAddress" placeholder="Pegar url de formulario correspondiente..." class="form-control" type="text">
+            <div for="form_url" class="error g-alert" >URL formulario no puede estar vacía</div>
+        </div>
+
+        {% include '../common/add_tag.html' %}
+
+        <button id="producto-volver-4"><a>volver</a></button>
+        <button><a>archivar</a></button>
+        <button><a>previsualizar</a></button>
+        <button type="submit" class="submit_event_form" ><a>publicar</a></button>
+    </form>
+</div>
+<!-- generar evento-->

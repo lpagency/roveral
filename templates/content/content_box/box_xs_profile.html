@@ -1,0 +1,21 @@
+<div {% if box_counter != 0 %}data-sr{% end %} class="col-sm-12 sobre-botones caja-s">
+    <a href="{{ site_base }}/{{ cnt["url"] }}">
+        <div class="cont-boxes" style="background:url('{{ cnt["thumb_1"] }}')" >
+            <div class="box-art">
+                <h2>{{ cnt["title"] }}</h2>
+            </div>
+            <img src="{{ cnt["thumb_1"] }}" data-original="{{ cnt["thumb_200"] }}" class="img-responsive lazy" alt="item">
+            <!-- <span class="productlist-price-container">
+                <span class="product-price">
+                    <span class="price">67900</span>
+                </span>
+            </span> -->
+        </div>
+    </a>
+    <span class="btn-modificar-cont btn-agregar-cont-principal ">
+        <i class="icon-pencil"></i>
+    </span>
+    <span class="btn-modificar-cont btn-set-cont" content-id="{{ cnt["id"] }}" box-id="{{ box_index }}" >
+        <i class="icon-pushpin"></i>
+    </span>
+</div>

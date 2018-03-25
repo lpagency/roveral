@@ -1,0 +1,60 @@
+<!-- generar artículo -->
+<div id="g-articulo-a" class="loginpopup step_two">
+    <form action="{{ site.url }}article/add" method="post" enctype="multipart/form-data" class="article-add-form" >
+        <div class="g-header-form">
+        <div class="g-header-button g-header-button-active">
+            <h2>NUEVO ARTÍCULO</h2>
+        </div>
+        <div class=" g-header-button">
+            <h2>BORRADORES</h2>
+        </div>
+    </div>
+        <div class="form-group required">
+            <label class="control-label">Título</label>
+            <input name="title" id="article_title_field" placeholder="Ingresa un título para el artículo" class="form-control" type="text">
+            <div id="error_article_title" for="title" class="error g-alert" >Ingrese un título. Max 50 caracteres. Actualmente tienes X</div>
+        </div>
+        <div class="form-group required">
+            <label class="control-label">Bajada</label>
+            <input name="caption" id="article_bajada_field" placeholder="Ingresa una frase destacada para el artículo" class="form-control" type="text">
+            <div id="error_article_bajada" for="caption" class="error g-alert" >Ingrese un texto. Máximo de 500 caracteres. Actualmente tienes X</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Texto</label>
+            <div class="controls">
+                <div id="wysihtml5-article-toolbar" style="display: none; float:left;">
+                    <a data-wysihtml5-command="bold"><b>bold |</b></a>
+                    <a data-wysihtml5-command="italic"><b>italic |</b></a>
+                    <a data-wysihtml5-command="insertUnorderedList"><b>lista</b></a>
+                </div>
+                <textarea id="wysihtml5-article-textarea" name="text" placeholder="ingresa y modifuca tu texto" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+                <div id="error_article_text" for="text" class="error g-alert" >Ingrese un texto</div>
+            </div>
+        </div>
+
+        <div class="form-group required">
+            <label class="control-label">Agregar Foto</label>
+            <div class="form-added-image">
+                    <i class="icon-remove" id="article_input_image_button"></i>
+                    <img src="" class="image-preview" id="article-image-holder"/>
+            </div>
+            <div class="form-add-image">
+                <i class="icon-plus icon-generic"></i>
+                <input type="file" name="image" lp-image-loader class="form-input-hided" id="article_input_image"/>
+            </div>
+                
+        </div>
+        <div class="clearfix"></div>
+        <div id="error_article_photo" for="image" class="error g-alert">Debe subir una Foto | la foto debe ser .png</div>
+        {% include '../common/add_tag.html' %}
+
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <button id="articulo-volver"><a>volver</a></button>
+            <button><a>archivar</a></button>
+            <button><a>previsualizar</a></button>
+            <button id="submit_article_form">publicar</button>
+        </div>
+    </form>
+</div>
+<!-- generar artículo -->

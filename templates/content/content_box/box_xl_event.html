@@ -1,0 +1,46 @@
+{% import time %}
+<div {% if box_counter != 0 %}data-sr{% end %} class="col-sm-12 sobre-botones caja-xl ">
+    <div class="cont-modifi" style="background:url('{{ cnt["thumb_1"] }}')" >
+        <div class="modifi" style="display:none;">
+            <button class="cerrar-opciones" >
+                <i class="icon-remove"></i>
+            </button>
+            <ul class="vertical-center-cont">
+                <li>
+                    <a href="{{ site_base }}/content/remove?id={{ cnt["id"] }}" >Archivar</a>
+                </li>
+                <li>
+                    <a href="/" >Editar</a>
+                </li>
+                <li>
+                    <a href="{{ site_base }}/content/set?content_id={{ cnt["id"] }}&box_id={{ box_index }}" >Fijar</a>
+                </li>
+                <li>
+                    <a href="/" >Liberar</a>
+                </li>
+            </ul>
+        </div>
+        <a href="{{ site_base }}/event/detail/url_amigable/{{ cnt["id"] }}">
+            <div class="cont-boxes" style="background:url('{{ cnt["thumb_1"] }}')" >
+                <div class="box-event">
+                    <div class="vertical-center-cont">
+                        <div class="horizontal-center-cont">
+                          <div class="box-event-date">
+                              <h3>{{ cnt["begin"].strftime("%d") }}</h3> 
+                              <p>{{ cnt["begin"].strftime("%b") }}</p> 
+                          </div>
+                          <h2 class="box-event-h2">{{ cnt["title"] }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <img src="{{ cnt["thumb_1"] }}" data-original="{{ cnt["thumb_200"] }}" class="img-responsive lazy " alt="item" />
+            </div>
+        </a>
+    </div>
+    <span class="btn-modificar-cont">
+    <i class="icon-pencil"></i>
+    </span>
+    <span class="btn-modificar-cont btn-set-cont" content-id="{{ cnt["id"] }}" box-id="{{ box_index }}" >
+        <i class="icon-pushpin"></i>
+    </span>
+</div>

@@ -1,0 +1,189 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.css" />
+<style type="text/css"></style>
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_group.js"></script>
+<script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+<script type="text/javascript" src="{{ site_base }}/common/js/bower/bodegas.client/dist/bodegas.client.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+
+
+    var base_url = 'https://apibodegas.loadingplay.com/',
+    checkout_url = 'https://pay.loadingplay.com/';
+    var app_public = 9;
+
+    function isLocalHost() {
+        return document.location.href.indexOf('localhost') != -1;
+    }
+
+    function isDevelopment() {
+        return document.location.href.indexOf('ondev.today') != -1;
+    }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+        base_url = 'https://apibodegas.loadingplay.com/';
+        checkout_url = 'https://pay.loadingplay.com/';
+        app_public= 15;
+    } 
+    else if ( isDevelopment() ) 
+    {
+        base_url = 'https://apibodegas.loadingplay.com/';
+        checkout_url = 'https://pay.loadingplay.com/';
+        app_public = 15;
+    }
+
+
+    var related = function(tag){
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 6,
+            'templateOrigin' : '#related-box',
+            'tag' : tag,
+            'ignore_stock' : true,
+        };
+
+    // tika sticks
+    config.tag = tag;
+    $('.tikas-recetas').ecommerce('product_box', config);
+    };
+
+    $(document).ready(function()
+    {
+        var facade = $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'animation' : 'basic',
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+                var ratio = window.devicePixelRatio || 1;
+                var w=screen.width * ratio;
+                $('.parallax-window').parallax();
+            }
+        });
+
+    });
+
+</script>
+
+<script type="text/template" id="product_detail">
+
+    <div class="width-banner" >
+        <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[4]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[4]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
+    </div>
+
+    <section class="buy-bg space50" style="color:#fff;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+
+                    <img src="{{! images[5]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[5]['thumb_500'] }}'" class="img-responsive img-descrip" alt="item">
+                </div>
+                <div class="col-md-7 text-descrip">
+                    <h2 class="name-prod space75">{{! name }}
+                    <br>
+                    {{! bullet_1 }}
+                    </h2>
+                    <p class="desc-prod">{{! description }}</p>
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['thumb_500'] }}'">
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[2]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[2]['thumb_500'] }}'">
+                    <div class="col-sm-12 space70">
+                        <button type="button" class="btn btn-default btn-nutr" data-toggle="modal" data-target="#myModal">Información Nutricional</button>
+                        <!-- <button type="button" class="btn btn-default btn-compr">Donde Comprar</button> -->
+                        <a href="{{ site_base }}/donde_comprar" class="btn btn-default btn-compr" role="button">Dónde comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title ">Información nutricional</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="col-sm-12 img-modal" src="{{! images[3]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[3]['thumb_500'] }}'">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</script>
+
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+
+<div class="product-detail" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+       <div class="container">
+        <div class="col-md-offset-1 col-md-10 col-md-offset-1 tikas-recetas">
+            <!-- titulo relacionados -->
+            <div class="row">
+                <div class="col-sm-12 space20">
+                    <!-- <h1 class="titulo-text-detal">Pruebas tus tikas con estas recetas</h1> -->
+                    {% if is_admin %}
+                    <h1 class="text-detal"  style="text-align:left;"><span class="editabletext" text-id="{{ site.name + '_texto-detalle-prod' }}" >{{ read_text(site.name + '_texto-detalle-prod') }}</span></h1>
+                    {% else %}
+                    <h1 class="text-detal" style="text-align:left;"> {{ read_text(site.name + '_texto-detalle-prod') }} </h1>
+                    {% end %}
+                </div>
+            </div>
+            <!-- fin titulo relacionados -->
+        </div>
+       </div>
+
+    </div>
+</div>
+
+<div class="space70 clearfix"></div>
+{% include '../home/footer.html' %}
+{% end %}
