@@ -93,6 +93,13 @@ p{
     padding-bottom: 25px;
     margin: 0;
 }
+.img-about{
+    border-radius: 11px;
+    margin-bottom: 30px;
+}
+.obras{
+    margin-bottom: 30px;
+}
 .last{
     padding-bottom: 0;
 }
@@ -101,6 +108,18 @@ p{
 }
 .ruler{
     border-bottom: 1px solid #c9c9c9;
+}
+.col-md-3.div-cli {
+    margin-bottom: 15px;
+    height: 152px;
+}
+.img-clientes{
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 94px;
+    object-fit: scale-down;
+    background-color: white;
+    max-height: 94px;
 }
 .img-spacing{
     margin-right: 30px;
@@ -328,7 +347,12 @@ p{
 .featured-item .block ul{margin: 0;overflow: hidden; padding: 0;}
 .featured-item .block ul li{list-style: none;float: left;}
 .featured-item .block .block-title{padding-bottom: 30px;}
-.featured-item .block .block-title h1{font-size: 28px; line-height: 32px; color: white; text-transform: uppercase;font-family: 'source_sans_probold'; letter-spacing: 1px;}
+.featured-item .block .block-title h1{
+    font-size: 28px;
+    line-height: 32px;
+    color: white;
+    letter-spacing: 1px;
+}
 .featured-item .block .block-title h2{font-size: 18px; line-height: 24px; color: white; font-family: 'source_sans_prolight';}
 
 
