@@ -146,9 +146,8 @@ p{
 .navbar-nav > li > a{
     color: #030200;
     font-size: 16px;
-    background-image: none;
-    border: none;
-    font-family: 'source_sans_probold';
+    background-image: none !important;
+    border: none !important;
     text-transform: uppercase;
     padding: 15px 0px;
     padding-right: 40px;
@@ -295,7 +294,7 @@ p{
 	generic styles starts here
  ************************************************/
 .featured-block{
-    padding:55px 0;
+    padding: 55px 0 130px;
     overflow: hidden;
 }
 .featured-block .block{}
