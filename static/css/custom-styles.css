@@ -75,7 +75,7 @@
 	Global styles starts here
  ************************************************/
 body{
-    background: #030200;
+    background: #3b3e4a;
     color: white;
     font-size: 14px;
     line-height: 24px;
@@ -442,7 +442,7 @@ margin-top: 10px;
 .copy-rights{
     color: #fdd311;
     font-family: 'source_sans_proregular';
-    background: #030200;
+    background: #3b3e4a;
     padding: 35px 0;
 }
 .copy-rights a{color: #fdd311;font-size: 14px; font-family: 'source_sans_proregular'; text-decoration: none;}
