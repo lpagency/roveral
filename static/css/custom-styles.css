@@ -97,6 +97,11 @@ p{
     border-radius: 11px;
     margin-bottom: 30px;
 }
+.slick-arrow{
+    background: none;
+    border: none;
+    color: transparent;
+}
 .obras{
     margin-bottom: 30px;
 }
