@@ -60,7 +60,7 @@
 
 body
 {
-    background: #3b3e4a;
+    background: #dadbda;
     color: white;
     font-size: 14px;
     line-height: 24px;
@@ -239,7 +239,7 @@ p
 {
     margin: 0;
     font-size: 44px;
-    color: #fdd311;
+    color: #07088f;
     font-family: 'source_sans_probold';
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -249,14 +249,19 @@ p
 {
     font-size: 18px;
     line-height: 24px;
-    color: #ffee23;
+    color: #07088f;
     font-family: 'source_sans_prolight';
+}
+
+.equipos
+{
+    color: #08498c;
 }
 
 .menu
 {
     text-align: center;
-    background: #fdd311;
+    background: #08498c;
     height: 52px;
 }
 
@@ -378,14 +383,14 @@ p
     font-family: 'source_sans_problack';
     text-transform: uppercase;
     padding: 10px 25px;
-    background: #fdd311;
+    background: #08498c;
     border-radius: 40px;
     box-shadow: 0 3px 2px 0px #4a4c54;
 }
 
 .banner .carousel-caption .btn:hover
 {
-    color: #fdd311;
+    color: #08498c;
     background: #fff;
     transition: all 1s;
 }
@@ -397,7 +402,7 @@ p
     height: 40px;
     line-height: 42px;
     font-size: 30px;
-    background: #fdd311;
+    background: #07088f;
     border-radius: 50px;
     bottom: 42%;
     opacity: 0.8;
@@ -433,30 +438,6 @@ p
     opacity: 0;
 }
 
-.banner .carousel-inner:hover img
-{
-    -webkit-filter: blur(5px);
-    transition: all 5s;
-}
-
-.banner .carousel-inner:hover h1
-{
-    transition: all 1s;
-    opacity: 0.9 !important;
-}
-
-.banner .carousel-inner:hover h2
-{
-    transition: all 1s;
-    opacity: 0.9 !important;
-}
-
-.banner .carousel-inner:hover .btn
-{
-    transition: all 1s;
-    opacity: 0.9 !important;
-}
-
 .featured-block
 {
     padding: 55px 0 130px;
@@ -479,7 +460,7 @@ p
     text-shadow: none;
     font-size: 18px;
     line-height: 24px;
-    color: #fdd311;
+    color: #08498c;
     text-transform: uppercase;
     font-family: 'source_sans_probold';
     padding-bottom: 10px;
@@ -498,7 +479,7 @@ p
 .featured-block .caption .btn
 {
     color: #fff;
-    background: #fdd311;
+    background: #08498c;
     font-size: 12px;
     font-family: 'source_sans_problack';
     border-radius: 30px;
@@ -546,7 +527,6 @@ p
 {
     font-size: 28px;
     line-height: 32px;
-    color: white;
     letter-spacing: 1px;
 }
 
@@ -567,7 +547,7 @@ p
 .user-info .icon
 {
     margin-right: 30px;
-    background: #fdd311;
+    background: #08498c;
     color: #fff;
     border-radius: 10px;
     font-size: 25px;
@@ -598,7 +578,7 @@ p
 .block .panel-default>.panel-heading
 {
     background: #fff;
-    color: #fdd311;
+    color: #08498c;
     font-size: 16px;
     padding: 0;
 }
@@ -694,7 +674,7 @@ p
 .featured-content .block .btn
 {
     color: #fff;
-    background: #fdd311;
+    background: #08498c;
     font-size: 12px;
     font-family: 'source_sans_problack';
     border-radius: 30px;
@@ -711,7 +691,7 @@ p
 
 .footer-wrapper
 {
-    background: #3b3e4a;
+    background: #dadbda;
 }
 
 .site-content
@@ -724,7 +704,6 @@ p
 {
     font-size: 18px;
     line-height: 24px;
-    color: #fff;
     text-transform: uppercase;
     font-family: 'source_sans_probold';
     padding-bottom: 10px;
@@ -764,7 +743,7 @@ p
 .site-content .block .input-group-btn .btn
 {
     border-radius: 0 20px 20px 0;
-    background: #fdd311;
+    background: #08498c;
     color: #fff;
     font-family: 'source_sans_problack';
     text-transform: uppercase;
@@ -777,7 +756,7 @@ p
 .site-content .block .input-group-btn .btn:hover
 {
     background: white;
-    color: #fdd311;
+    color: #08498c;
     transition: all 1s;
 }
 
@@ -806,7 +785,7 @@ p
     height: 40px;
     line-height: 14px;
     padding: 14px;
-    background: #fdd311;
+    background: #08498c;
     color: #fff;
     border-radius: 50%;
     display: inline-block;
@@ -816,7 +795,7 @@ p
 .social [class^="fw-icon-"]:hover
 {
     background: white;
-    color: #fdd311;
+    color: #08498c;
     transition: all 1s;
 }
 
@@ -827,7 +806,7 @@ p
 
 .copy-rights
 {
-    color: #fdd311;
+    color: #08498c;
     font-family: 'source_sans_proregular';
     background: #3b3e4a;
     padding: 35px 0;
@@ -835,7 +814,7 @@ p
 
 .copy-rights a
 {
-    color: #fdd311;
+    color: #08498c;
     font-size: 14px;
     font-family: 'source_sans_proregular';
     text-decoration: none;
