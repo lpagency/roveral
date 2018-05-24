@@ -87,24 +87,88 @@
 
         {% block javascript %}{% end %}
         <script type="text/javascript">
-        $(document).ready(function()
-        {
-          $(".button").click(function(e)
-          {
-            e.preventDefault();
-            $('html, body').animate({
-              scrollTop: $($.attr(this, 'href')).offset().top
-            }, 1000);
-          });
-            $('.multiple-items').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000
+            $(document).ready(function()
+            {
+              $(".button").click(function(e)
+              {
+                e.preventDefault();
+                $('html, body').animate({
+                  scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+              });
+                $('.multiple-items').slick({
+                    infinite: true,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    centerMode: true,
+                    centerPadding: '100px',
+                    slidesToShow: 3,
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                centerMode: true,
+                                centerPadding: '40px',
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                arrows: false,
+                                centerMode: true,
+                                centerPadding: '40px',
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                });
             });
-        });
-      </script>
+
+            var mainImage = $("#mainImage");
+
+            $(".img-container img").click(function()
+            {
+                var src = $(this).attr("src");
+                $("#mainImage").attr("src", src);
+            });
+
+            mainImage.on("click", function()
+            {
+                $(this).css("transform", "scale(1.1)");
+            });
+
+            var mainImage2 = $(".main-2");
+
+            $(".img-2 img").click(function()
+            {
+                var src = $(this).attr("src");
+                $(".main-2").attr("src", src);
+            });
+
+            var mainImage3 = $(".main-3");
+
+            $(".img-3 img").click(function()
+            {
+                var src = $(this).attr("src");
+                $(".main-3").attr("src", src);
+            });
+
+            var mainImage4 = $(".main-4");
+
+            $(".img-4 img").click(function()
+            {
+                var src = $(this).attr("src");
+                $(".main-4").attr("src", src);
+            });
+
+            mainImage.on("click", function()
+            {
+                $(this).css("transform", "scale(1.1)");
+            });
+        </script>
 
         {% if is_admin %}
         <script type="text/javascript">
