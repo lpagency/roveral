@@ -212,8 +212,8 @@ p
 .nav>li>a:hover,
 .nav>li>a:focus
 {
-    text-decoration: none;
-    background-color: none !important;
+    outline: 0;
+    background-color: transparent !important;
 }
 
 .img-spacing
