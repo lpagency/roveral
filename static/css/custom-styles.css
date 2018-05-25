@@ -216,6 +216,11 @@ p
     background-color: transparent !important;
 }
 
+.img-header
+{
+    height: 200px;
+}
+
 .img-spacing
 {
     margin-right: 30px;
@@ -226,8 +231,6 @@ p
 {
     overflow: hidden;
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 40px;
 }
 
 .site-name
