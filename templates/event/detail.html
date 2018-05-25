@@ -3,11 +3,11 @@
     {{ site.name }}
 {% end %}
 {% block scripts %}
-    <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/plugins/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/imageloader.js" ></script>
 {% end %}
 {% block css %}
-<style type="text/css" href='{{ site_base }}/static/css/event.css' rel='stylesheet' ></style>
+<style type="text/css" href='{{ site_base }}/{{ nocache_static }}/css/event.css' rel='stylesheet' ></style>
 {% end %}
 {% block header %}
 {% include '../home/inside_header.html' %}
@@ -30,7 +30,7 @@
                         
                         <div class="content articulo-text" style="text-align:left;">
                             <div class="col-sm-8 content-picture">
-                                <img src="{{ site_base }}/static/img/0013.png" class="img-responsive lazy" data-original="{{ event["url"] }}" alt="item">
+                                <img src="{{ site_base }}/{{ nocache_static }}/img/0013.png" class="img-responsive lazy" data-original="{{ event["url"] }}" alt="item">
                             </div>
                             <div class="col-sm-4 especial">
                                 <h2 class="h2-event">{{ event["begin"].strftime("%d") }}</h2>
@@ -50,7 +50,7 @@
                             </p>
                             <!-- formulario -->
                             <!-- <div class="col-sm-12" style=" background-color: rgb(241, 239, 239);">
-                                <img src="{{ site_base }}/static/img/0050.png" class="img-responsive" alt="item" style="padding:40px 0px ; margin: 0 auto;">
+                                <img src="{{ site_base }}/{{ nocache_static }}/img/0050.png" class="img-responsive" alt="item" style="padding:40px 0px ; margin: 0 auto;">
                             </div> -->
                             
                             <div class="post-date col-sm-12">

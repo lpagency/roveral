@@ -35,7 +35,7 @@
                         <label class="control-label">Seleccionar un archivo</label>
                         <input type="file" name="profile-picture-input" class="profile-picture-input form-control" id="profile_input_image1"/>
                     </div>
-                    <img src="{{ site_base }}/static/img/0013.png" style="width:100%; margin-bottom:17px;" class="profile-picture" id="profile_image_holder1">
+                    <img src="{{ site_base }}/{{ nocache_static }}/img/0013.png" style="width:100%; margin-bottom:17px;" class="profile-picture" id="profile_image_holder1">
                     <div id="error_profile_photo1" class="error" style="color: red; text-align: left; font-style: italic; display: none">Debe subir una Foto</div>
                 </div>
                 <div style="width:45%; float:left; height: auto; float: left; margin-left:5%;">
@@ -44,7 +44,7 @@
                         <label class="control-label">Seleccionar un archivo</label>
                         <input type="file" name="company-picture-input" class="company-picture-input form-control" id="profile_input_image2"/>
                     </div>
-                    <img src="{{ site_base }}/static/img/0013.png" style="width:100%; margin-bottom:17px;" class="company-picture" id="profile_image_holder2">
+                    <img src="{{ site_base }}/{{ nocache_static }}/img/0013.png" style="width:100%; margin-bottom:17px;" class="company-picture" id="profile_image_holder2">
                     <div id="error_profile_photo2" class="error" style="color: red; text-align: left; font-style: italic; display: none ">Debe subir una Foto</div>
                 </div>
                 <div style="width:100%; float:left; height: auto; float: left;">
@@ -82,7 +82,7 @@
 <!-- generar perfil -->
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/plugins/loadingplay/imageupload.preview.js" ></script>
+<script type="text/javascript" src="{{ site_base }}/{{ nocache_static }}/js/plugins/loadingplay/imageupload.preview.js" ></script>
 <script type="text/javascript">
 
     var AddProfileView = function(controller)
